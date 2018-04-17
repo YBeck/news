@@ -1,0 +1,14 @@
+{
+  "name": "expressapp",
+  "version": "1.0.0",
+  "description": "serves react news app",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app"
+  },
+  "author": "yochanan beck",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
