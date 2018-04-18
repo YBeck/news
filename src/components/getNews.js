@@ -7,7 +7,7 @@ class GetNews extends Component {
     super(props);
     this.state = {
       headlines: [],
-      recentArticals: [],
+      recentArticles: [],
       author: "fox-news",
       error: false
     };
@@ -31,22 +31,22 @@ class GetNews extends Component {
     fetch(url2)
       .then(response => response.json())
       .catch(() => this.setState({ error: true }))
-      .then(recentArticals =>
+      .then(recentArticles =>
         this.setState({
-          recentArticals: recentArticals ? recentArticals.articles : []
+          recentArticles: recentArticles ? recentArticles.articles : []
         })
       );
   };
   render() {
-    let { headlines, recentArticals, error } = this.state;
-    // console.log(recentArticals);
+    let { headlines, recentArticles, error } = this.state;
+    // console.log(recentArticles);
     return (
       <div>
         {!error ? (
           <News
             headlines={headlines}
-            recentArticals={recentArticals}
-            title="News Articals"
+            recentArticles={recentArticles}
+            title="News Articles"
           />
         ) : (
           <h1 className="text-danger fail">Sorry failed to get News</h1>

@@ -9,7 +9,7 @@ import {
   CardLink
 } from "reactstrap";
 
-const Articals = ({ item }) => {
+const Article = ({ item }) => {
   console.log(item);
   return (
     <Card body>
@@ -28,8 +28,8 @@ const Articals = ({ item }) => {
   );
 };
 
-Articals.propTypes = {
+Article.propTypes = {
   item: PropTypes.array
 };
 
-export default Articals;
+export default Article;
