@@ -10,14 +10,14 @@ import {
 } from "reactstrap";
 
 const Article = ({ item }) => {
-  console.log(item);
+  // console.log(item);
   return (
     <Card body>
       <CardImg
         height="35%"
         width="100%"
         src={item.urlToImage}
-        alt="Card image cap"
+        alt="Image not available"
       />
       <CardBody>
         <CardTitle>{item.title}</CardTitle>
@@ -29,7 +29,7 @@ const Article = ({ item }) => {
 };
 
 Article.propTypes = {
-  item: PropTypes.array
+  item: PropTypes.object
 };
 
 export default Article;

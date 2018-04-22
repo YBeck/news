@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import { Switch, Link, Route } from "react-router-dom";
 import News from "./news";
 
 class GetBusiness extends Component {

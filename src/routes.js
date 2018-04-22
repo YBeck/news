@@ -4,12 +4,14 @@ import GetNews from "./components/getNews";
 import GetBusiness from "./components/getBusiness";
 import GetWeather from "./components/getWeather";
 import Home from "./components/home";
+import Callback from "./components/callback";
 
 const Routes = (
   <Switch>
     <Route path="/news" component={GetNews} />
     <Route path="/business" component={GetBusiness} />
     <Route path="/weather" component={GetWeather} />
+    <Route path="/callback" component={Callback} />
     <Route path="/" exact component={Home} />
     <Route render={() => <h1>Page does not exsist 404</h1>} />
   </Switch>
