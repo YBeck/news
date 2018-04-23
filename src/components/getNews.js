@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import { Switch, Link, Route } from "react-router-dom";
 import News from "./news";
 
 class GetNews extends Component {
@@ -14,27 +13,22 @@ class GetNews extends Component {
   }
 
   componentDidMount() {
-    this.fetchData();
+    this.fetchArticals();
+    this.fetchHeadlines();
   }
 
   setAuthor = author => {
-    // this.setState({ author });
-    // console.log(author);
-    // this.fetchData();
-
     this.setState(
       () => {
         return { author };
       },
       () => {
-        // console.log(this.state.author);
-        this.fetchData();
+        this.fetchArticals();
       }
     );
   };
 
-  fetchData = () => {
-    let { author } = this.state;
+  fetchHeadlines = () => {
     let url = `https://newsapi.org/v2/top-headlines?sources=fox-news&apiKey=feac0e08fbbe4e5597b10a31254e15b9`;
     fetch(url)
       .then(response => response.json())
@@ -42,13 +36,15 @@ class GetNews extends Component {
       .then(headlines =>
         this.setState({ headlines: headlines ? headlines.articles : [] })
       );
+  };
 
-    let url2 = `https://newsapi.org/v2/everything?sources=${author}&apiKey=feac0e08fbbe4e5597b10a31254e15b9`;
-    fetch(url2)
+  fetchArticals = () => {
+    let { author } = this.state;
+    let url = `https://newsapi.org/v2/everything?sources=${author}&apiKey=feac0e08fbbe4e5597b10a31254e15b9`;
+    fetch(url)
       .then(response => response.json())
       .catch(() => this.setState({ error: true }))
       .then(recentArticles => {
-        // console.log("url ", url2);
         this.setState({
           recentArticles: recentArticles ? recentArticles.articles : []
         });
